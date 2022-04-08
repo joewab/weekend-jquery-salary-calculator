@@ -14,8 +14,55 @@
         <h1>$$Salary Calculator$$</h1>
     </header>
 
-
     <main>
+        <table class="inputFields">
+            <thead>add employee</thead>
+            <tr>
+                <td><input id="firstNameInput" type="text" placeholder="first name"></td>
+                <td><input id="lastNameInput" type="text" placeholder="last name"></td>
+                <td><input id="idInput" type="text" placeholder="ID"></td>
+                <td><input id="titleInput" type="text" placeholder="Title"></td>
+                <td><input id="annualSalaryInput" type="text" placeholder="Annual Salary"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><button id="submitButton">submit</button></td>
+            </tr>
+        </table>
+        <table>
+            <thead>
+                <th>Employees</th>
+            </thead>
+            <tbody id="employeeInformation">
+            <tr class ="columnHeadings">
+                <td>First Name</td>
+                <td>Last Name</td>
+                <td>ID</td>
+                <td>Title</td>
+                <td>Annual Salary</td>
+                <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr id="tableFooter">
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><h2>Total Monthly</h2></td>
+                    <td id="monthlyTotal"></td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+
+       
 
     </main>
 
