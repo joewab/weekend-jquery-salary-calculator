@@ -7,7 +7,6 @@ let monthlyCost = 0;
 function begin(){
     console.log('jq');
     $('#submitButton').on ('click', addEmployee);
-    // $('#deleteButton').on ('click', deleteEmployee);
 }
 
 function addEmployee(){
@@ -27,10 +26,14 @@ $('#monthlyTotal').text(monthlyCost);
 
    console.log(Number(monthlyCost));
 
+   if (monthlyCost > 20000){
+    $('#tableFooter').css("background-color", "red");
+   }
+
     $('#employeeInformation').append(
         `<tr>
-            <td>${employee.firstname}</td>
-            <td>${employee.lastname}</td>
+            <td>${employee.firstName}</td>
+            <td>${employee.lastName}</td>
             <td>${employee.id}</td>
             <td>${employee.title}</td>
             <td>${employee.annualSalary}</td>
@@ -38,18 +41,16 @@ $('#monthlyTotal').text(monthlyCost);
         </tr>`
 
     )
+
+    $('#firstNameInput').val('')
+    $('#lastNameInput').val('')
+    $('#idInput').val('')
+    $('#titleInput').val('')
+    $('#annualSalaryInput').val('')
+
+    $('#deleteButton').on ('click', deleteEmployee);
 }
 
-
-
-
-
-
-        // <tr>
-        //     <td>firstName</td>
-        //     <td>lastName</td>
-        //     <td>id</td>
-        //     <td>title</td>
-        //     <td>annualSalary</td>
-        //     <td><button id="deleteButton">delete</button></td>
-        // </tr>
+function deleteEmployee(){
+    console.log('deleted');
+}

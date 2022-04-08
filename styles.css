@@ -9,6 +9,10 @@ table {
     empty-cells: show;
   }
 
+.tableFooter{
+    
+}
+
 
 #employeeInformation tr td {
     outline: thin solid;
@@ -17,4 +21,8 @@ table {
 
 .columnHeadings {
     background-color: bisque;
+}
+
+.red-background{
+    background-color: red;
 }
