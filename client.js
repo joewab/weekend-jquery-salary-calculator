@@ -20,7 +20,10 @@ function addEmployee(){
         annualSalary: $('#annualSalaryInput').val()
     }; //end create employee object
 
-    //append the properites of the employee object into the table formatting on the DOM
+    //append the properites of the employee object into the table formatting on the DOM only if all the fields are filled out
+    if(employee.firstName==='' || employee.lastName==='' || employee.id==='' || employee.title==='' || employee.annualSalary===''){
+       return false
+    }
     $(`#employeeInformation`).append(
         `<tr id='${employee.id}'/>
             <td>${employee.firstName}</td>
@@ -62,6 +65,6 @@ function addEmployee(){
 
 //run this when a delete button is hit to delete an entire row from the table
 function deleteEmployee(){
-    $(this).remove();
+    $(this).closest("tr").remove();
 }
 //end delete row
