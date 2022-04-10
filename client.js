@@ -31,7 +31,7 @@ function addEmployee(){
             <td>${employee.id}</td>
             <td>${employee.title}</td>
             <td>${employee.annualSalary}</td>
-            <td><button id="${employee.id}deleteButton">delete</button></td>
+            <td><button class="deleteButton" id="${employee.id}deleteButton">delete</button></td>
         </tr>`
     ); //end append employee object properties
     
@@ -53,7 +53,7 @@ function addEmployee(){
     monthlyCost += (Number(employee.annualSalary)/12);
     $('#monthlyTotal').text(monthlyCost.toFixed(2));
     if (monthlyCost > 20000){
-    $('#tableFooter').css("background-color", "red");
+    $('#tableFooter').css("background-color", "rgb(228, 153, 153)");
     };
     //end update the monthly cost
 

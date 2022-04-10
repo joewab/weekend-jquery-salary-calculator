@@ -10,21 +10,22 @@
     <title>Salary Calculator</title>
 </head>
 <body>
-    <header>
-        <h1>$$$$$$$ Salary Calculator $$$$$$$</h1>
-    </header>
 
     <main>
         <table class="inputFields">
-            <thead>
-                <th><h3>Add Employee</h3></th>
-            </thead>
             <tr>
-                <td><input id="firstNameInput" type="text" placeholder="first name"></td>
-                <td><input id="lastNameInput" type="text" placeholder="last name"></td>
-                <td><input id="idInput" type="text" placeholder="ID"></td>
-                <td><input id="titleInput" type="text" placeholder="Title"></td>
-                <td><input id="annualSalaryInput" type="text" placeholder="Annual Salary"></td>
+                <td colspan="5"><h1>Employee Salary Calculator</h1></td>
+            
+            </tr>
+
+            <tr><td><h3>Add Employee</h3></td></tr>
+
+            <tr>
+                <td><input class="input" id="firstNameInput" type="text" placeholder="first name"></td>
+                <td><input class="input" id="lastNameInput" type="text" placeholder="last name"></td>
+                <td><input class="input" id="idInput" type="text" placeholder="ID"></td>
+                <td><input class="input" id="titleInput" type="text" placeholder="Title"></td>
+                <td><input class="input" id="annualSalaryInput" type="text" placeholder="Annual Salary"></td>
             </tr>
             <tr>
                 <td></td>
@@ -36,7 +37,7 @@
         </table>
         <table class ="employees">
             <thead>
-                <th>Employees</th>
+                <th><h3>Employees</h3></th>
             </thead>
             <tbody id="employeeInformation">
             <tr class ="columnHeadings">
@@ -45,15 +46,16 @@
                 <td>ID</td>
                 <td>Title</td>
                 <td>Annual Salary</td>
-                <td>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</td>
+                <td>Action</td>
             </tr>
             </tbody>
             <tfoot id="tableFooter">
               <div class = "red-background">
                 </tr>
                 <tr>
-                    <td colspan="5"><h2>Total Monthly</h2></td>
-                    <td id="monthlyTotal"></td>
+                    <td colspan="4">&nbsp</td>
+                    <td><h4>Total Monthly</h4></td>
+                    <td id="monthlyTotal">0</td>
                 </tr>
             </div>
             </tfoot>
