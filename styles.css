@@ -17,13 +17,13 @@ table {
     padding: 2em;
   }
 
-.inputFields {
-    text-align: justify;
-}
-
 #employeeInformation tr td {
     outline: thin solid;
     empty-cells: show;
+}
+
+#employeesList{
+    text-indent: 3%;
 }
 
 .columnHeadings {

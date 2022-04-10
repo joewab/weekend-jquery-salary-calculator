@@ -25,13 +25,13 @@ function addEmployee(){
        return false
     }
     $(`#employeeInformation`).append(
-        `<tr id='${employee.id}'/>
+        `<tr id="employeesList"/>
             <td>${employee.firstName}</td>
             <td>${employee.lastName}</td>
             <td>${employee.id}</td>
             <td>${employee.title}</td>
-            <td>${employee.annualSalary}</td>
-            <td><button class="deleteButton" id="${employee.id}deleteButton">delete</button></td>
+            <td id="salary">${employee.annualSalary}</td>
+            <td align="right"><button class="deleteButton" id="${employee.id}">delete employee ${employee.id}</button></td>
         </tr>`
     ); //end append employee object properties
     
@@ -52,19 +52,29 @@ function addEmployee(){
     //if the monthly cost gets above 20000, turn that part of the DOM red
     monthlyCost += (Number(employee.annualSalary)/12);
     $('#monthlyTotal').text(monthlyCost.toFixed(2));
-    if (monthlyCost > 20000){
-    $('#tableFooter').css("background-color", "rgb(228, 153, 153)");
-    };
+    if (monthlyCost >= 20000){
+        $('#tableFooter').css("background-color", "rgb(228, 130, 120)");
+        };
     //end update the monthly cost
 
     //initialize the delete button that is created by this function
-    $(`#${employee.id}deleteButton`).on ('click', deleteEmployee);
+    $(`#${employee.id}`).on ('click', deleteEmployee);
     //end button initialization
+    
 }
 
 
 //run this when a delete button is hit to delete an entire row from the table
 function deleteEmployee(){
+    for (employee of employees){
+        if (`delete employee ${employee.id}`===$(this).text()){
+        monthlyCost -= Number(employee.annualSalary)/12
+        };
+    $('#monthlyTotal').text(monthlyCost.toFixed(2));
     $(this).closest("tr").remove();
+    if (monthlyCost < 20000){
+        $('#tableFooter').css("background-color", "rgb(241, 241, 241)");
+        };
+}
 }
 //end delete row
